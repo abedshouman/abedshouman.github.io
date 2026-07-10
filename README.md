@@ -2,7 +2,7 @@
 
 Personal portfolio site built with **Next.js 15**, **TypeScript**, and **Tailwind CSS**, exported as a static site and deployed to **GitHub Pages**.
 
-**Live:** https://abedshouman.github.io/portfolio
+**Live:** https://abedshouman.github.io
 
 ## Development
 

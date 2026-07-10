@@ -8,6 +8,8 @@ export const profile = {
   title: 'Senior Backend Engineer',
   location: 'Vancouver, BC, Canada',
   email: 'abed.chouman@outlook.com',
+  phone: '+1 778 878 1241',
+  phoneHref: 'tel:+17788781241', // digits only for the tel: link
   tagline:
     'I design and build scalable, high-throughput backend systems for data-intensive applications.',
   summary:

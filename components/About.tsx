@@ -30,16 +30,19 @@ export default function About() {
           </ul>
         </div>
 
-        {/* Monogram avatar — swap for a real photo by dropping abed.jpg in /public
-            and replacing this block with a <img src="abed.jpg" /> */}
+        {/* Circular profile photo. Swap by replacing public/profile.jpg. */}
         <div className="mx-auto md:mx-0">
-          <div className="group relative h-56 w-56">
-            <div className="absolute inset-0 translate-x-3 translate-y-3 rounded-2xl border-2 border-accent transition group-hover:translate-x-2 group-hover:translate-y-2" />
-            <div className="relative flex h-56 w-56 items-center justify-center rounded-2xl bg-gradient-to-br from-accent to-sky-500 text-6xl font-bold text-white shadow-xl">
-              {profile.initials}
-            </div>
+          <div className="group relative mx-auto h-56 w-56">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent to-sky-500 blur-lg opacity-40 transition group-hover:opacity-60" />
+            <img
+              src="/profile.jpg"
+              alt={profile.name}
+              width={224}
+              height={224}
+              className="relative h-56 w-56 rounded-full object-cover object-[50%_28%] shadow-xl ring-4 ring-white dark:ring-slate-900"
+            />
           </div>
-          <p className="mt-3 text-center text-xs text-slate-400 md:text-left">
+          <p className="mt-4 text-center text-xs text-slate-400 md:text-left">
             {profile.location}
           </p>
         </div>

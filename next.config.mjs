@@ -1,15 +1,9 @@
 /** @type {import('next').NextConfig} */
 
-// The repo is served from https://abedshouman.github.io/portfolio,
-// so we need a basePath. If you rename the repo to
-// `abedshouman.github.io`, set basePath to '' and it serves from root.
-const repo = 'portfolio';
-const isProd = process.env.NODE_ENV === 'production';
-
+// Served from the user site https://abedshouman.github.io (repo named
+// `abedshouman.github.io`), so no basePath is needed — it serves from root.
 const nextConfig = {
   output: 'export', // static HTML export for GitHub Pages
-  basePath: isProd ? `/${repo}` : '',
-  assetPrefix: isProd ? `/${repo}/` : '',
   images: {
     unoptimized: true, // no image optimization server on static hosting
   },
