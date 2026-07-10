@@ -37,19 +37,17 @@ export default function Contact() {
       </div>
 
       <div className="mt-10 flex justify-center gap-6 text-sm text-slate-500 dark:text-slate-400">
-        {socials
-          .filter((s) => s.name !== 'Email')
-          .map((s) => (
-            <a
-              key={s.name}
-              href={s.url}
-              target={s.url.startsWith('http') ? '_blank' : undefined}
-              rel="noreferrer"
-              className="transition hover:text-accent"
-            >
-              {s.name}
-            </a>
-          ))}
+        {socials.map((s) => (
+          <a
+            key={s.name}
+            href={s.url}
+            target={s.url.startsWith('http') ? '_blank' : undefined}
+            rel="noreferrer"
+            className="transition hover:text-accent"
+          >
+            {s.name}
+          </a>
+        ))}
       </div>
     </section>
   );

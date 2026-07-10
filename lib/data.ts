@@ -28,11 +28,6 @@ export const socials = [
     url: 'https://www.linkedin.com/in/abdul-basset-chouman-553053115',
     handle: 'Abdul Basset Chouman',
   },
-  {
-    name: 'Email',
-    url: 'mailto:abed.chouman@outlook.com',
-    handle: 'abed.chouman@outlook.com',
-  },
 ];
 
 export type SkillGroup = { category: string; skills: string[] };
