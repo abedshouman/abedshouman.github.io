@@ -34,7 +34,6 @@ export default function Nav() {
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <a href="#" className="font-mono text-sm font-semibold tracking-tight">
           {profile.shortName}
-          <span className="text-accent">.</span>
         </a>
 
         <div className="hidden items-center gap-1 md:flex">

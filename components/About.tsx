@@ -22,9 +22,19 @@ export default function About() {
           </p>
           <ul className="grid gap-2 sm:grid-cols-2">
             {specializations.map((s) => (
-              <li key={s} className="flex items-start gap-2">
-                <span className="mt-1 text-accent">▹</span>
-                <span className="text-sm">{s}</span>
+              <li key={s} className="flex items-start gap-2 text-sm leading-6">
+                <svg
+                  className="mt-1.5 h-3 w-3 shrink-0 text-accent"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m4 2 4 4-4 4" />
+                </svg>
+                <span>{s}</span>
               </li>
             ))}
           </ul>
@@ -42,9 +52,13 @@ export default function About() {
               className="relative h-56 w-56 rounded-full object-cover object-[50%_28%] shadow-xl ring-4 ring-white dark:ring-slate-900"
             />
           </div>
-          <p className="mt-4 text-center text-xs text-slate-400 md:text-left">
-            {profile.location}
-          </p>
+          <div className="mt-4 flex items-center justify-center gap-1.5 text-slate-600 dark:text-slate-300 md:justify-start">
+            <svg className="h-4 w-4 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span className="text-sm font-medium">{profile.location}</span>
+          </div>
         </div>
       </div>
     </section>

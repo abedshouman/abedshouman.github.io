@@ -1,4 +1,5 @@
 import { profile, socials } from '@/lib/data';
+import GetInTouchButton from './GetInTouchButton';
 
 export default function Hero() {
   return (
@@ -30,14 +31,11 @@ export default function Hero() {
           >
             View my work
           </a>
-          <a
-            href={`mailto:${profile.email}`}
-            className="rounded-lg border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-accent hover:text-accent dark:border-slate-700 dark:text-slate-200"
-          >
-            Get in touch
-          </a>
+          <GetInTouchButton className="rounded-lg border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-accent hover:text-accent dark:border-slate-700 dark:text-slate-200" />
           <a
             href={profile.resumeUrl}
+            target="_blank"
+            rel="noreferrer"
             className="rounded-lg px-5 py-3 text-sm font-semibold text-slate-600 underline-offset-4 transition hover:text-accent hover:underline dark:text-slate-300"
           >
             Résumé ↗
