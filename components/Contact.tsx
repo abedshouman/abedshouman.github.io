@@ -3,7 +3,7 @@ import { profile, socials } from '@/lib/data';
 export default function Contact() {
   return (
     <section id="contact" className="mx-auto max-w-3xl px-6 py-28 text-center">
-      <p className="mb-3 font-mono text-sm text-accent">05. What&apos;s next?</p>
+      <p className="mb-3 font-mono text-sm text-accent">06. What&apos;s next?</p>
       <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
         Get in touch
       </h2>
