@@ -25,7 +25,7 @@ export const socials = [
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/in/abdul-basset-chouman-553053115',
+    url: 'https://www.linkedin.com/in/abdul-basset-chouman-553053115',
     handle: 'Abdul Basset Chouman',
   },
   {
