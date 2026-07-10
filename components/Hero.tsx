@@ -11,14 +11,14 @@ export default function Hero() {
       </div>
 
       <div className="mx-auto w-full max-w-5xl">
-        <div className="group relative mb-8 h-32 w-32 animate-fade-up">
+        <div className="group relative mb-8 h-40 w-40 animate-fade-up sm:h-44 sm:w-44">
           <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent to-sky-500 opacity-40 blur-lg transition group-hover:opacity-60" />
           <img
             src="/profile.jpg"
             alt={profile.name}
-            width={128}
-            height={128}
-            className="relative h-32 w-32 rounded-full object-cover object-[50%_28%] shadow-xl ring-4 ring-white dark:ring-slate-900"
+            width={176}
+            height={176}
+            className="relative h-40 w-40 rounded-full object-cover object-[50%_28%] shadow-xl ring-4 ring-white sm:h-44 sm:w-44 dark:ring-slate-900"
           />
         </div>
         <p className="mb-4 animate-fade-up font-mono text-sm text-accent">
