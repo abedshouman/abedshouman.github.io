@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { profile } from '@/lib/data';
 
 export default function GetInTouchButton({
@@ -11,6 +12,9 @@ export default function GetInTouchButton({
   label?: string;
 }) {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -26,19 +30,15 @@ export default function GetInTouchButton({
     };
   }, [open]);
 
-  return (
-    <>
-      <button type="button" onClick={() => setOpen(true)} className={className}>
-        {label}
-      </button>
-
-      {open && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Contact details"
-        >
+  // Rendered via a portal to document.body so `position: fixed` anchors to
+  // the viewport, not the hero's transformed (animated) container.
+  const modal = (
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Contact details"
+    >
           <div
             className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
             onClick={() => setOpen(false)}
@@ -101,7 +101,15 @@ export default function GetInTouchButton({
             </div>
           </div>
         </div>
-      )}
+  );
+
+  return (
+    <>
+      <button type="button" onClick={() => setOpen(true)} className={className}>
+        {label}
+      </button>
+
+      {mounted && open && createPortal(modal, document.body)}
     </>
   );
 }
