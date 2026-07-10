@@ -31,7 +31,9 @@ export default function Experience() {
                   key={i}
                   className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400"
                 >
-                  <span className="mt-1 text-accent">▹</span>
+                  <svg className="mt-1 h-3 w-3 shrink-0 text-accent" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="m4 2 4 4-4 4" />
+                </svg>
                   <span>{h}</span>
                 </li>
               ))}
