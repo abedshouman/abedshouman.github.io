@@ -28,17 +28,25 @@ Edit that one file to update the site; no component changes needed.
 
 ## Deployment
 
-Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the static
-export and publishes it to GitHub Pages.
+Deployments are **manual** via release branches. Pushing to `dev` does **not** trigger a deploy.
 
-**One-time setup:** In the GitHub repo → **Settings → Pages → Build and deployment**,
-set **Source** to **GitHub Actions**.
+### One-time setup
 
-### Custom domain
+In the GitHub repo → **Settings → Pages → Build and deployment**, set **Source** to **GitHub Actions**.  
+(The branch dropdown disappears — that's normal, branch selection happens in the Actions tab.)
 
-Add a `public/CNAME` file containing your domain, set `basePath`/`assetPrefix` to
-`''` in `next.config.mjs`, and configure DNS. (Or rename the repo to
-`abedshouman.github.io` to serve from the root without a basePath.)
+### Releasing a new version
+
+1. Create a release branch from `dev`:
+   ```bash
+   git checkout dev
+   git checkout -b release/1.0.0
+   git push origin release/1.0.0
+   ```
+2. Go to GitHub → **Actions** tab → **"Deploy to GitHub Pages"** → **"Run workflow"** (on the right)
+3. In the **"Branch"** dropdown, select your release branch (e.g. `release/1.0.0`)
+4. Click the green **"Run workflow"** button
+5. Wait for the run to complete — your site is now live at https://abedshouman.github.io
 
 ## Tech
 
