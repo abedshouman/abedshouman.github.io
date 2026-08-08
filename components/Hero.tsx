@@ -36,7 +36,7 @@ export default function Hero() {
 
         <div className="mt-8 flex animate-fade-up flex-wrap items-center gap-3">
           <a
-            href="#projects"
+            href="#experience"
             className="rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition hover:bg-accent-soft"
           >
             View my work

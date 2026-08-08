@@ -56,6 +56,12 @@ export const skills: SkillGroup[] = [
   { category: 'Other', skills: ['Linux', 'Shell Scripting', 'Query Optimization'] },
 ];
 
+export type ProjectBrief = {
+  name: string;
+  description: string;
+  tech: string[];
+};
+
 export type Job = {
   company: string;
   role: string;
@@ -64,6 +70,7 @@ export type Job = {
   end: string;
   present: boolean;
   highlights: string[];
+  projects?: ProjectBrief[];
 };
 
 export const experience: Job[] = [
@@ -81,6 +88,20 @@ export const experience: Job[] = [
       'Optimized database performance and reduced service latency through query tuning, indexing strategies, and efficient data access patterns.',
       'Improved system observability by integrating monitoring and logging for better reliability and debugging.',
     ],
+    projects: [
+      {
+        name: 'Real-Time Healthcare Data Pipeline',
+        description:
+          'High-throughput microservices processing real-time patient vitals and sensor data, with sub-second latency and fault-tolerant design for clinical environments.',
+        tech: ['Java', 'Quarkus', 'Kafka', 'PostgreSQL', 'AWS'],
+      },
+      {
+        name: 'Identity & Access Management Platform',
+        description:
+          'Multi-tenant identity platform built on Keycloak with OAuth2/OIDC, supporting role-based access control across clinical and administrative systems.',
+        tech: ['Keycloak', 'OAuth2', 'OpenID Connect', 'REST APIs'],
+      },
+    ],
   },
   {
     company: 'Masimo',
@@ -96,6 +117,20 @@ export const experience: Job[] = [
       'Implemented CI/CD pipelines with Jenkins and Docker for automated builds, testing, and deployments to AWS.',
       'Developed internal tools and frameworks (Java, Groovy) to automate testing and infrastructure replication.',
     ],
+    projects: [
+      {
+        name: 'OTA Firmware Update Platform',
+        description:
+          'Event-driven backend system for Over-the-Air firmware updates across IoT/Bluetooth devices, handling asynchronous delivery, device state tracking, and rollback management at scale.',
+        tech: ['Java', 'Spring Boot', 'Vert.x', 'Kafka', 'AWS'],
+      },
+      {
+        name: 'Real-Time Clinical Monitoring System',
+        description:
+          'High-performance APIs and data pipelines for real-time clinical monitoring, processing large volumes of device telemetry with optimized query patterns and low-latency data flows.',
+        tech: ['Java', 'Spring Boot', 'PostgreSQL', 'Docker'],
+      },
+    ],
   },
   {
     company: 'Vistory',
@@ -110,6 +145,20 @@ export const experience: Job[] = [
       'Built RESTful APIs supporting high-volume user interactions, optimizing data access across large datasets.',
       'Developed and deployed microservices with Docker and Jenkins-based CI/CD pipelines.',
       'Implemented blockchain-based features (ERC-721 smart contracts) for secure digital asset ownership.',
+    ],
+    projects: [
+      {
+        name: '3D Printing Management Platform',
+        description:
+          'Full-featured backend for a 3D printing SaaS platform, supporting high-volume user interactions, print job scheduling, and large-dataset querying with MariaDB and Redis caching.',
+        tech: ['Node.js', 'Express.js', 'MariaDB', 'Redis', 'Docker'],
+      },
+      {
+        name: 'Blockchain Digital Asset System',
+        description:
+          'ERC-721 smart contract integration for secure digital asset ownership and provenance tracking, deployed on Ethereum with automated compilation and deployment pipelines.',
+        tech: ['Solidity', 'Ethereum', 'ERC-721', 'Node.js', 'Jenkins'],
+      },
     ],
   },
 ];
