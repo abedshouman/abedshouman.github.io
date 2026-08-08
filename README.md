@@ -37,16 +37,24 @@ In the GitHub repo → **Settings → Pages → Build and deployment**, set **So
 
 ### Releasing a new version
 
-1. Create a release branch from `dev`:
+1. Bump the version in `package.json` (this also updates the version label in the footer):
+   ```bash
+   npm version patch   # 1.0.0 → 1.0.1
+   npm version minor   # 1.0.0 → 1.1.0
+   npm version major   # 1.0.0 → 2.0.0
+   ```
+2. Create a release branch from `dev`:
    ```bash
    git checkout dev
    git checkout -b release/1.0.0
    git push origin release/1.0.0
    ```
-2. Go to GitHub → **Actions** tab → **"Deploy to GitHub Pages"** → **"Run workflow"** (on the right)
-3. In the **"Branch"** dropdown, select your release branch (e.g. `release/1.0.0`)
-4. Click the green **"Run workflow"** button
-5. Wait for the run to complete — your site is now live at https://abedshouman.github.io
+3. Go to GitHub → **Actions** tab → **"Deploy to GitHub Pages"** → **"Run workflow"** (on the right)
+4. In the **"Branch"** dropdown, select your release branch (e.g. `release/1.0.0`)
+5. Click the green **"Run workflow"** button
+6. Wait for the run to complete — your site is now live at https://abedshouman.github.io
+
+The version label in the footer is read from `package.json` at build time — no manual edits needed.
 
 ## Tech
 
